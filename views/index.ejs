@@ -1,0 +1,32 @@
+<% layout('layout') -%>
+
+<h2>All Invoices</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Invoice Number</th>
+            <th>Client</th>
+            <th>Service Type</th>
+            <th>Total Amount</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% invoices.forEach(invoice => { %>
+            <tr>
+                <td><%= invoice.invoiceNumber %></td>
+                <td><%= invoice.client %></td>
+                <td><%= invoice.serviceType %></td>
+                <td>$<%= invoice.totalAmount %></td>
+                <td><%= invoice.status %></td>
+                <td>
+                    <a href="/<%= invoice._id %>">View</a> |
+                    <a href="/<%= invoice._id %>/export/pdf">PDF</a> |
+                    <a href="/<%= invoice._id %>/export/excel">Excel</a>
+                </td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>

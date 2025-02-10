@@ -1,0 +1,24 @@
+/kingdomblue-invoicing-app
+├── api
+│   └── invoices
+│       ├── index.js         # Handles all invoice routes
+│       └── [id].js          # Handles individual invoice operations
+├── public
+│   ├── css
+│   │   └── styles.css
+│   └── js
+│       └── scripts.js
+├── views
+│   ├── layout.ejs
+│   ├── index.ejs
+│   ├── invoiceForm.ejs
+│   └── invoiceDetails.ejs
+├── models
+│   └── Invoice.js
+├── utils
+│   ├── pdfGenerator.js
+│   └── excelExporter.js
+├── .env
+├── vercel.json
+├── package.json
+└── README.md

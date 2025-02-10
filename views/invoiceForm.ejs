@@ -1,0 +1,38 @@
+<% layout('layout') -%>
+
+<h2>Create New Invoice</h2>
+
+<form action="/" method="POST" id="invoiceForm">
+    <label>Client Name:</label>
+    <input type="text" name="client" required><br>
+
+    <label>Service Type:</label>
+    <select name="serviceType" required>
+        <option value="Executive">Executive</option>
+        <option value="Bronze">Bronze</option>
+        <option value="Gold">Gold</option>
+        <option value="Platinum">Platinum</option>
+    </select><br>
+
+    <label>Burial Distance (km):</label>
+    <input type="number" name="distance" min="0"><br>
+
+    <label>Family Car ($50):</label>
+    <input type="checkbox" name="familyCar" value="true"><br>
+
+    <label>Hearse ($70):</label>
+    <input type="checkbox" name="hearse" value="true"><br>
+
+    <h3>Additional Items</h3>
+    <div id="itemsContainer">
+        <div class="item">
+            <input type="text" name="items[0][name]" placeholder="Item Name">
+            <input type="text" name="items[0][description]" placeholder="Description">
+            <input type="number" name="items[0][quantity]" value="1" min="1">
+            <input type="number" name="items[0][price]" placeholder="Price">
+        </div>
+    </div>
+    <button type="button" onclick="addItem()">Add Item</button><br><br>
+
+    <button type="submit">Create Invoice</button>
+</form>

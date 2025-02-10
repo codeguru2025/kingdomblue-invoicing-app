@@ -1,0 +1,25 @@
+<% layout('layout') -%>
+
+<h2>Invoice Details</h2>
+
+<p><strong>Invoice Number:</strong> <%= invoice.invoiceNumber %></p>
+<p><strong>Client:</strong> <%= invoice.client %></p>
+<p><strong>Service Type:</strong> <%= invoice.serviceType %></p>
+<p><strong>Total Amount:</strong> $<%= invoice.totalAmount %></p>
+<p><strong>Status:</strong> <%= invoice.status %></p>
+
+<h3>Items</h3>
+<ul>
+    <% invoice.items.forEach(item => { %>
+        <li><%= item.name %> - $<%= item.price %> x <%= item.quantity %></li>
+    <% }) %>
+</ul>
+
+<h3>Update Status</h3>
+<form action="/<%= invoice._id %>?_method=PUT" method="POST">
+    <select name="status">
+        <option value="Pending" <%= invoice.status === 'Pending' ? 'selected' : '' %>>Pending</option>
+        <option value="Paid" <%= invoice.status === 'Paid' ? 'selected' : '' %>>Paid</option>
+    </select>
+    <button type="submit">Update</button>
+</form>
