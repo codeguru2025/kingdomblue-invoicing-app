@@ -1,0 +1,25 @@
+{
+    "name": "kingdomblue-invoicing-app",
+    "version": "1.0.0",
+    "description": "An invoicing app for KingdomBlue Zimbabwe",
+    "main": "index.js",
+    "scripts": {
+      "start": "node index.js",
+      "dev": "nodemon index.js"
+    },
+    "dependencies": {
+      "express": "^4.18.2",
+      "mongoose": "^7.2.2",
+      "ejs": "^3.1.8",
+      "dotenv": "^16.3.1",
+      "body-parser": "^1.20.2",
+      "pdfkit": "^0.13.0",
+      "exceljs": "^4.3.0"
+    },
+    "devDependencies": {
+      "nodemon": "^3.0.1"
+    },
+    "author": "CodeGuru2025",
+    "license": "MIT"
+  }
+  
