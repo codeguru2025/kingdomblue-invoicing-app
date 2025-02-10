@@ -2,14 +2,22 @@
     "version": 2,
     "builds": [
       {
-        "src": "api/invoices.js",
+        "src": "api/invoices/index.js",
+        "use": "@vercel/node"
+      },
+      {
+        "src": "api/invoices/[id].js",
         "use": "@vercel/node"
       }
     ],
     "routes": [
       {
-        "src": "/(.*)",
-        "dest": "/api/invoices.js"
+        "src": "/api/invoices",
+        "dest": "/api/invoices/index.js"
+      },
+      {
+        "src": "/api/invoices/([^/]+)",
+        "dest": "/api/invoices/[id].js"
       }
     ]
   }
